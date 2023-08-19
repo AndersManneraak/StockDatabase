@@ -29,11 +29,11 @@ if __name__ == "__main__":
             for table in API_BULK_YEAR_CALLS:
                 table_y = 'im_'+table+'_annual'
                 table_q = 'im_'+table+'_quarter'
-                db.truncate_table(table_y)
-                db.truncate_table(table_q)
+                #db.truncate_table(table_y)
+                #db.truncate_table(table_q)
             for subfolder in subfolders:
                 with Timer("Year " + subfolder + 'inserted'):
-                    full_folder_import(bulk+'/'+subfolder,include_year=True)
+                    full_folder_import(bulk+'/'+subfolder)
         with Timer("Bulk other"):
             full_folder_import(bulk)
         with Timer("General"):
