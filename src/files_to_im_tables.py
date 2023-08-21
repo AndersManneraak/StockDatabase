@@ -1,8 +1,6 @@
 from utilities import *
 import pandas as pd
-import pymssql as pymssql
 from configurations import *
-from sqlalchemy import create_engine
 from sql_database import SQLDatabase
 import os
 import argparse

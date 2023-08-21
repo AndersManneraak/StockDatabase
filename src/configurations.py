@@ -5,7 +5,13 @@ FMPAPI = '28f8e0695d72e13bac21ddedc70bb460'
 #Connections
 SERVER = 'Anders_Desktop'
 DATABASE = 'Stocks'
-CONNECTION_STRING = f'mssql+pyodbc://{SERVER}/{DATABASE}?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes'
+ORCL_USER = 'stock_import'
+pw = 'Warlordmanrock95'
+host = 'localhost'
+service_name = 'orcl'
+port = '1521'
+#CONNECTION_STRING = f'mssql+pyodbc://{SERVER}/{DATABASE}?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes'
+CONNECTION_STRING = f'oracle://{ORCL_USER}:{pw}@{host}:{port}/?service_name={service_name}'
 
 #----------------------TABLE - VIEW - MAPPING -----------------------------------------------------------
 STAGING_FULL_MAPPING= {

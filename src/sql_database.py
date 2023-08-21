@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from sqlalchemy import *
+import sqlalchemy
 from configurations import CONNECTION_STRING
 from utilities import *
 
@@ -34,8 +35,8 @@ class SQLDatabase:
         tables = self.list_tables()
         return table_name in tables
 
-    def insert_file_to_table(self, data, table, if_exists='append', schema='dbo'):
-        data.to_sql(table, self.alc_engine, if_exists=if_exists, index=False,schema=schema)
+    def insert_file_to_table(self, data, table,dtyp, if_exists='append', schema='stock_import'):
+        data.to_sql(table, self.alc_engine, if_exists=if_exists, index=False,schema=schema, dtype=dtyp)
 
     def mulk_insert_file_to_table(self, filepath, table):
         self.execute_sql(f"BULK INSERT dbo.{table} FROM '{filepath}' WITH (KEEPIDENTITY,   FIELDTERMINATOR = ',',   ROWTERMINATOR = '\\n',   FIRSTROW = 2);")
@@ -45,10 +46,17 @@ class SQLDatabase:
             if file.endswith(".csv"):
                 csv_file_path = os.path.join(folder_path, file)
                 table_name = "im_" + os.path.splitext(file)[0]
-                #self.execute_sql(f"BULK INSERT dbo.{table_name} FROM '{csv_file_path}' WITH (   FIELDTERMINATOR = ',',   ROWTERMINATOR = '\\n',   FIRSTROW = 2, LASTROW = 30);")
+                
                 df = pd.read_csv(csv_file_path)
+                #Oracle specific handling of dataframe to avoid bug with pd and sqlalc interaction
+                dtyp = self.get_dtyp(df)
                 if include_year:
                     df['year'] = folder_path[-4:]
-                self.insert_file_to_table(df, table_name)
+                self.insert_file_to_table(data=df, table=table_name, dtyp=dtyp)
                 #self.mulk_insert_file_to_table(filepath=csv_file_path,table=table_name)
                 print(f"{csv_file_path} has been successfully inserted into the table: {table_name}") 
+    
+    def get_dtyp(self,df):
+        dtyp = {}
+        for column in df.columns:
+            dtyp[column] = sqlalchemy.types.VARCHAR(df[column].astype(str).str.len().max())
