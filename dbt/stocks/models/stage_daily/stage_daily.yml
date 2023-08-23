@@ -1,0 +1,32 @@
+
+version: 2
+
+models:
+  - name: st_daily_price_us
+    description: "daily prices us stocks"
+    columns:
+      - name: ticker
+        description: "The primary key for this table"
+        tests:
+          - unique
+  - name: st_daily_commodities
+    description: "daily prices commodities"
+    columns:
+      - name: ticker
+        description: "The primary key for this table"
+        tests:
+          - unique
+  - name: st_daily_indexes
+    description: "daily prices indexes"
+    columns:
+      - name: ticker
+        description: "The primary key for this table"
+        tests:
+          - unique
+  - name: st_profile_all
+    description: "daily profile"
+    columns:
+      - name: symbol
+        description: "The primary key for this table"
+        tests:
+          - unique

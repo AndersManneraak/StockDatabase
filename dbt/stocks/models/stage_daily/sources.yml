@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: STOCK_IMPORT
+    database: orcl  
+    schema: STOCK_IMPORT  
+    tables:
+      - name: IM_DAILY_PRICE_NYSE
+      - name: IM_DAILY_PRICE_NASDAQ
+      - name: IM_COMMODITIES
+      - name: IM_INDEXES
+      - name: IM_PROFILE_ALL_BULK

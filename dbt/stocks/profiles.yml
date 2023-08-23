@@ -5,5 +5,5 @@ stocks:
       type: oracle
       user: stock_import
       pass: Warlordmanrock95
-      dbname: ORCL
+      dbname: orcl
       schema: stock_import

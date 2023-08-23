@@ -20,7 +20,7 @@ subfolders = [ f.name for f in os.scandir(bulk) if f.is_dir() ]
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("mapping", help="folders to import. daily or full")
+    parser.add_argument("mapping", help="folders to import. daily, full or a specific year like 2020")
     args = parser.parse_args()
     if args.mapping.lower() == 'full':
         with Timer("Bulk with period"):
@@ -34,12 +34,15 @@ if __name__ == "__main__":
                     full_folder_import(bulk+'/'+subfolder)
         with Timer("Bulk other"):
             full_folder_import(bulk)
-        with Timer("General"):
+        """ with Timer("General"):
             full_folder_import(general)
         with Timer("misc"):
-            full_folder_import(misc)
+            full_folder_import(misc) """
     if args.mapping.lower() == 'daily':
         with Timer("daily"):
             full_folder_import(daily)
+    if args.mapping.lower() in YEARLIST:
+        year = args.mapping.lower()
+        full_folder_import(bulk+'/'+year)
     else:
         print("enter daily or full as argument to the file")

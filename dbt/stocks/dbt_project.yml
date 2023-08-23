@@ -24,7 +24,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
+quoting:
+  database: true
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -34,5 +35,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   stocks:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    stage_daily:
+      +schema: stage_daily
+      +materialized: table
+

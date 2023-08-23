@@ -59,4 +59,8 @@ class SQLDatabase:
     def get_dtyp(self,df):
         dtyp = {}
         for column in df.columns:
-            dtyp[column] = sqlalchemy.types.VARCHAR(df[column].astype(str).str.len().max())
+            if column == 'description':
+                dtyp[column] = sqlalchemy.types.CLOB
+            else:
+                dtyp[column] = sqlalchemy.types.VARCHAR(500)
+        return dtyp
