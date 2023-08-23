@@ -38,4 +38,7 @@ models:
     stage_daily:
       +schema: stage_daily
       +materialized: table
+    stage_financials:
+      +schema: stage_financials
+      +materialized: table
 

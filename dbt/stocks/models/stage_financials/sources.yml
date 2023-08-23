@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: STOCK_IMPORT
+    database: orcl  
+    schema: STOCK_IMPORT  
+    tables:
+      - name: IM_INCOME_STATEMENT_BULK_ANNUAL

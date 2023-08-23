@@ -1,0 +1,9 @@
+
+version: 2
+
+models:
+  - name: st_income_statement_y
+    description: "income statements yearly"
+    columns:
+      - name: symbol
+        description: "The primary key for this table"
