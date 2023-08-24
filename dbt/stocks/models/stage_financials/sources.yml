@@ -6,3 +6,4 @@ sources:
     schema: STOCK_IMPORT  
     tables:
       - name: IM_INCOME_STATEMENT_BULK_ANNUAL
+      - name: IM_INCOME_STATEMENT_BULK_QUARTER

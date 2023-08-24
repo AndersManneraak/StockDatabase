@@ -5,5 +5,10 @@ models:
   - name: st_income_statement_y
     description: "income statements yearly"
     columns:
-      - name: symbol
+      - name: ticker
+        description: "The primary key for this table"
+  - name: st_income_statement_q
+    description: "income statements quarterly"
+    columns:
+      - name: ticker
         description: "The primary key for this table"
