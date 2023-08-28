@@ -12,3 +12,11 @@ models:
     columns:
       - name: ticker
         description: "The primary key for this table"
+  - name: st_balance_sheet_q
+    description: "balance sheet quarterly"
+    columns: 
+      - name: ticker
+  - name: st_balance_sheet_y
+    description: "balance sheet quarterly"
+    columns: 
+      - name: ticker

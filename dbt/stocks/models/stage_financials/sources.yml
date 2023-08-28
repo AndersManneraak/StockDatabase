@@ -7,3 +7,5 @@ sources:
     tables:
       - name: IM_INCOME_STATEMENT_BULK_ANNUAL
       - name: IM_INCOME_STATEMENT_BULK_QUARTER
+      - name: IM_BALANCE_SHEET_BULK_ANNUAL
+      - name: IM_BALANCE_SHEET_BULK_QUARTER

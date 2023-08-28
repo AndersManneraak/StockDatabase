@@ -34,5 +34,5 @@ cast("EPSDiluted" as number) as eps_diluted,
 cast("weightedAverageShsOut" as number) as weighted_average_shs_out, 
 cast("weightedAverageShsOutDil" as number) as weighted_average_shs_out_dil, 
 link, 
-"finalLink" 
+"finalLink" as final_link
 from  {{source('STOCK_IMPORT','IM_INCOME_STATEMENT_BULK_ANNUAL')}} 
