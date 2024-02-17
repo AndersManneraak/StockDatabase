@@ -8,15 +8,20 @@ def reformat_column_names(input_column_names):
     reformatted_columns = []
 
     for column_name in column_names:
-        # Applying the desired formatting to each column name
-        reformatted_column = f'cast({column_name} as number) as {column_name}'
+        # Checking if the column name contains 'date'
+        if 'date' in column_name.lower():
+            # Applying date-specific formatting
+            reformatted_column = f'cast(to_date(substr({column_name},1,10),\'yyyy-mm-dd\') as date) as {column_name}'
+        else:
+            # Applying the general formatting
+            reformatted_column = f'cast({column_name} as number) as {column_name}'
+        
         reformatted_columns.append(reformatted_column)
 
     # Combining the reformatted column names back into a comma-separated list
     reformatted_column_names_list = ", ".join(reformatted_columns)
 
     return reformatted_column_names_list
-
 
 
 
