@@ -1,5 +1,5 @@
-from add_cast import reformat_column_names
-from reformat_cast_to_contain_quote import reformat_sql_select_list
+from add_cast import reformat_column_names, reformat_sql_select_list
+
 
 input = "columnName1, columnName2, columnName3"
 
