@@ -1,4 +1,4 @@
-select  "Symbol", 
+select  "Symbol" as symbol, 
 "Price", 
 "Beta", 
 "VolAvg", 
