@@ -40,4 +40,4 @@ link,
 "finalLink" as finallink
 
 from 
-STOCK_IMPORT.IM_CASH_FLOW_BULK_ANNUAL t
+{{source('STOCK_IMPORT','IM_CASH_FLOW_BULK_ANNUAL')}} 

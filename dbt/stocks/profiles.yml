@@ -7,3 +7,4 @@ stocks:
       pass: Warlordmanrock95
       dbname: orcl
       schema: stock_import
+      threads: 16

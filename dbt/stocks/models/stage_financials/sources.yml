@@ -9,3 +9,11 @@ sources:
       - name: IM_INCOME_STATEMENT_BULK_QUARTER
       - name: IM_BALANCE_SHEET_BULK_ANNUAL
       - name: IM_BALANCE_SHEET_BULK_QUARTER
+      - name: IM_CASH_FLOW_BULK_ANNUAL
+      - name: IM_CASH_FLOW_BULK_QUARTER
+      - name: IM_DCF_BULK
+      - name: IM_DIVIDEND
+      - name: IM_KEY_METRICS_BULK_ANNUAL
+      - name: IM_KEY_METRICS_BULK_QUARTER
+      - name: IM_RATIOS_BULK_ANNUAL
+      - name: IM_RATIOS_BULK_QUARTER

@@ -7,7 +7,7 @@ cast(to_date(substr("acceptedDate",1,10),'yyyy-mm-dd') as date) as accepted_date
 cast("calendarYear" as VARCHAR2(4)) as calendar_year,
 cast(period as VARCHAR2(2)) as period,
 cast(REVENUE as number) as REVENUE,
-cast("costOfRevenue" as number) as costOf_revenue,
+cast("costOfRevenue" as number) as cost_of_revenue,
 cast("grossProfit" as number) as gross_profit,
 cast("grossProfitRatio" as number (17,2)) as gross_profit_ratio,
 cast("ResearchAndDevelopmentExpenses" as number) as research_and_development_expenses,
